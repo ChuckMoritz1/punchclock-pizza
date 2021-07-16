@@ -27,6 +27,8 @@ public class Entry {
     @Column(nullable = false)
     private LocalDateTime checkOut;
 
+
+
     public Long getId() {
         return id;
     }

@@ -1,21 +1,21 @@
 <html lang="en">
-    <script>
-        function openLink() {
-            window.location.href = "/index.html";
+<script>
+    function openLink() {
+        window.location.href = "/index.html";
+    }
+    function openLog(){
+        window.location.href = "/login.html";
+    }
+    function checkvalue() {
+        var mystring = document.getElementById('myString').value;
+        if(!mystring.match(/\S/)) {
+            alert ('Empty value is not allowed');
+            return false;
+        } else {
+            window.location.href ="/index.html";
         }
-        function openReg(){
-            window.location.href = "/register.html";
-        }
-        function checkvalue() {
-            var mystring = document.getElementById('myString').value;
-            if(!mystring.match(/\S/)) {
-                alert ('Empty value is not allowed');
-                return false;
-            } else {
-                window.location.href = "/index.html";
-            }
-        }
-    </script>
+    }
+</script>
 <head>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <link rel="stylesheet" href="login.css">
@@ -24,8 +24,8 @@
     <div class="wrapper fadeInDown">
         <div id="formContent">
             <!-- Tabs Titles -->
-            <h2 class="active"> Sign In </h2>
-            <h2 onclick=openReg() class="inactive underlineHover">Sign Up  </h2>
+            <h2 onclick="openLog()" class="inactive underlineHover"> Sign In </h2>
+            <h2 class="active">Sign Up </h2>
 
 
             <!-- Icon -->
@@ -37,7 +37,7 @@
             <form onsubmit="return checkvalue(this)">
                 <input type="text" id="login" class="fadeIn second" name="login" onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' placeholder="login" required>
                 <input type="password"  id="password" class="fadeIn third" name="login" placeholder="password" minlength="8" required>
-                <input type="submit" class="fadeIn fourth" value="Log In" onclick="openLink()">
+                <input type="submit" class="fadeIn fourth" value="Sign Up" onclick="openLink()">
             </form>
 
         </div>
