@@ -10,10 +10,18 @@ import org.springframework.stereotype.Service;
 
 import static java.util.Collections.emptyList;
 
+/**
+ * The type Application user service.
+ */
 @Service
 public class ApplicationUserService implements UserDetailsService {
     private ApplicationUserRespository applicationUserRepository;
 
+    /**
+     * Instantiates a new Application user service.
+     *
+     * @param applicationUserRepository the application user repository
+     */
     public ApplicationUserService(ApplicationUserRespository applicationUserRepository) {
         this.applicationUserRepository = applicationUserRepository;
     }

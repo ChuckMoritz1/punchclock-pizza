@@ -8,6 +8,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+/**
+ * The type User controller.
+ */
 @RestController
 @RequestMapping("/users")
 public class UserController {
@@ -15,12 +18,23 @@ public class UserController {
     private ApplicationUserRespository applicationUserRepository;
     private BCryptPasswordEncoder bCryptPasswordEncoder;
 
+    /**
+     * Instantiates a new User controller.
+     *
+     * @param applicationUserRepository the application user repository
+     * @param bCryptPasswordEncoder     the b crypt password encoder
+     */
     public UserController(ApplicationUserRespository applicationUserRepository,
                           BCryptPasswordEncoder bCryptPasswordEncoder) {
         this.applicationUserRepository = applicationUserRepository;
         this.bCryptPasswordEncoder = bCryptPasswordEncoder;
     }
 
+    /**
+     * Sign up.
+     *
+     * @param user the user
+     */
     @PostMapping("/sign-up")
     public void signUp(@RequestBody ApplicationUser user) {
         user.setPassword(bCryptPasswordEncoder.encode(user.getPassword()));
