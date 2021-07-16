@@ -1,4 +1,18 @@
 <html lang="en">
+    <script>
+        function openLink() {
+            window.open("/index.html");
+        }
+        function checkvalue() {
+            var mystring = document.getElementById('myString').value;
+            if(!mystring.match(/\S/)) {
+                alert ('Empty value is not allowed');
+                return false;
+            } else {
+                window.open("/index.html");
+            }
+        }
+    </script>
 <head>
     <script src="https://code.jquery.com/jquery-1.9.1.js"></script>
     <link rel="stylesheet" href="login.css">
@@ -16,10 +30,10 @@
             </div>
 
             <!-- Login Form -->
-            <form>
-                <input type="text" id="login" class="fadeIn second" name="login" placeholder="login">
-                <input type="password"  id="password" class="fadeIn third" name="login" placeholder="password">
-                <input type="submit" class="fadeIn fourth" value="Log In">
+            <form onsubmit="return checkvalue(this)">
+                <input type="text" id="login" class="fadeIn second" name="login" onkeypress='return ((event.charCode >= 65 && event.charCode <= 90) || (event.charCode >= 97 && event.charCode <= 122) || (event.charCode == 32))' placeholder="login" required>
+                <input type="password"  id="password" class="fadeIn third" name="login" placeholder="password" minlength="8" required>
+                <input type="submit" class="fadeIn fourth" value="Log In" onclick="openLink()">
             </form>
 
         </div>
