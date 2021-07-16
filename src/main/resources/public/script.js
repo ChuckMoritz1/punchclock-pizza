@@ -16,8 +16,10 @@ const removeEntries = (id) =>{
     fetch(${URL}/entries, {
     method: 'DELETE',
         headers:{
-        'Content-Type':'plain/text'
-    },
+            'content-Type'
+        :
+            'plain/text'
+        },
     body: id
   } ).then((result) => {
     indexEntries();

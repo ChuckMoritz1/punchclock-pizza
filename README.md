@@ -1,5 +1,5 @@
 # M223: Punchclock
-Dies ist eine Beispielapplikation für das Modul M223.
+Dies ist eine Beispielapplikation für das Modul M223. Das Projekt wurde zusätlich erweitert um eine Pizza Verwaltung.
 
 ## Loslegen
 Folgende Schritte befolgen um loszulegen:
