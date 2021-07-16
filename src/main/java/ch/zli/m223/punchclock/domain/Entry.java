@@ -7,6 +7,7 @@ import com.fasterxml.jackson.datatype.jsr310.ser.LocalDateTimeSerializer;
 
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Entity
 public class Entry {
@@ -26,6 +27,15 @@ public class Entry {
     @JsonSerialize(using = LocalDateTimeSerializer.class)
     @Column(nullable = false)
     private LocalDateTime checkOut;
+
+    @ManyToMany
+    @Column(nullable = false)
+    private List<Pizza> pizza;
+
+
+    @OneToMany
+    @Column(nullable = false)
+    private List<Pizzeria> pizzeria;
 
 
 

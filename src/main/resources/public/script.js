@@ -4,8 +4,46 @@ let entries = [];
 const dateAndTimeToDate = (dateString, timeString) => {
     return new Date(`${dateString}T${timeString}`).toISOString();
 };
+const saveEntry = (e) => {
+    if (updateEntry.update) {
+        editEntries(e);
+    } else {
+        createEntry(e);
+    }
+};
 
-const createEntry = (e) => {
+const removeEntries = (id) =>{
+    fetch(${URL}/entries, {
+    method: 'DELETE',
+        headers:{
+        'Content-Type':'plain/text'
+    },
+    body: id
+  } ).then((result) => {
+    indexEntries();
+});
+}
+
+const editEntries = (e) => {
+    e.preventDefault();
+    const formData = new FormData(e.target);
+    const entry = {};
+    entry['checkIn'] = dateAndTimeToDate(formData.get('checkInDate'), formData.get('checkInTime'));
+    entry['checkOut'] = dateAndTimeToDate(formData.get('checkOutDate'), formData.get('checkOutTime'));
+    entry.id = updateEntry.id;
+    fetch(${URL}/entries, {
+    method: 'PUT',
+        headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify(entry)
+       }).then((result) => {
+    indexEntries();
+    updateEntry.id = null;
+    updateEntry.update = false;
+
+
+    const createEntry = (e) => {
     e.preventDefault();
     const formData = new FormData(e.target);
     const entry = {};
