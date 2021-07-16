@@ -17,6 +17,6 @@ Folgende Dienste stehen während der Ausführung im Profil `dev` zur Verfügung:
 - REST-Schnittstelle der Applikation: http://localhost:8081
 - Dashboard der H2 Datenbank: http://localhost:8081/h2-console
 
-In punchclock_pizza, kann man sienen Pizza konsum managen. Man kann jedesmal, wenn man eine Pizza bestellt eintragen von wo man welche Pizza 
+In punchclock_pizza, kann man sienen Pizza-Konsum managen. Man kann jedesmal, wenn man eine Pizza bestellt eintragen von wo man welche Pizza 
 bestellt hat und kann zusätzlich eintragen wie lange die Pizza gebracuht hat bis sie ankahm. Es können mehrer Personen auf das Dokument zugreifen.
  
